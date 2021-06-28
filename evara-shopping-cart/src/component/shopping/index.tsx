@@ -4,7 +4,9 @@ interface IAppProps {
 }
 
 const App: React.FunctionComponent<IAppProps> = (props) => {
-  return ;
+  return (
+    <div></div>
+  );
 };
 
 export default App;
