@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-export interface IAppProps {
+export interface IHeaderProps {
 }
 
-export default function Header (props: IAppProps) {
+export default function Header (props: IHeaderProps) {
   return (
-    <div>
-      
-    </div>
+    <header className='header'>
+      Header
+    </header>
   );
 }
