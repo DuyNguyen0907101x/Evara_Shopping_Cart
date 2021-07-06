@@ -1,12 +1,28 @@
+import './shopping.css';
 import * as React from 'react';
+import {Container, H2} from '../../styles/style';
 
-export interface IShoppingProps {
-}
+import Products from '../../data/products.json'
 
-export default function Shopping (props: IShoppingProps) {
+import Item from '../Item';
+
+export default function Shopping () {
   return (
-    <div>
-      Shopping
-    </div>
+    <main className='shopping'>
+      <Container>
+        <H2 className="sub-title">Shopping</H2>
+        <div className="row">
+          {
+            Products && Products.map((item, index) => {
+              return (
+                <div className="col-md-4" key={index}>
+                  <Item itemData={item}></Item>
+                </div>
+              )
+            })
+          }
+        </div>
+      </Container>
+    </main>
   );
 }
