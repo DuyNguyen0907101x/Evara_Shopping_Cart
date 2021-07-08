@@ -14,7 +14,12 @@ p {
   margin: 0 0 10px 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0 0 10px 0;
 }
 
@@ -28,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 [class*='col-'] {
-  padding: 0 16px;
+  padding: 0 15px;
   width: 100%;
 }
 
@@ -50,20 +55,20 @@ img {
   max-width: 100%;
 }
 
-.shopping .col-md-4{
+.shopping .col-md-4 {
   margin-bottom: 20px;
 }
 
 .item-box {
-  padding: 10px 10px 15px 10px;
-  border: 1px solid #33CC66;
-  border-radius: 10px;
+  padding: 12px 12px 15px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 25px;
   height: 100%;
 }
 
 .item-image {
   position: relative;
-  border-radius: 5px;
+  border-radius: 20px;
   padding-bottom: 100%;
   overflow: hidden;
   margin-bottom: 15px;
@@ -92,10 +97,10 @@ img {
 
 .item-tag {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 10px;
   color: #fff;
-  padding: 2px 10px;
+  padding: 5px 10px;
   border-radius: 15px;
   line-height: 1;
   font-size: 12px;
@@ -103,7 +108,7 @@ img {
 }
 
 .tag-hot {
-  background-color: #FF6699;
+  background-color: #ff75a0;
 }
 
 .item-rate {
@@ -126,7 +131,7 @@ img {
   font-size: 18px;
   margin: 0;
   line-height: 1;
-  color: #009933;
+  color: #088178;
 }
 
 .item-old-price {
@@ -150,7 +155,7 @@ img {
   border-radius: 50%;
   width: 35px;
   height: 35px;
-  background-color: #CCFFCC;
+  background-color: #e8f6ea;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -160,7 +165,7 @@ img {
 }
 
 .cart-icon:hover {
-  background-color: #99FFCC;
+  background-color: #088178;
 }
 
 .item-info {
@@ -169,4 +174,8 @@ img {
 
 .item-col {
   width: 50%;
+}
+
+.item-contents {
+  padding: 0 10px;
 }

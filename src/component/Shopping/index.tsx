@@ -1,6 +1,6 @@
 import './shopping.css';
 import * as React from 'react';
-import {Container, H2} from '../../styles/style';
+import {Container, H2, Row, Col} from '../../styles/abstracts/_globalStyles';
 
 import Products from '../../data/products.json'
 
@@ -10,18 +10,18 @@ export default function Shopping () {
   return (
     <main className='shopping'>
       <Container>
-        <H2 className="sub-title">Shopping</H2>
-        <div className="row">
+        <H2>Shopping</H2>
+        <Row>
           {
             Products && Products.map((item, index) => {
               return (
-                <div className="col-md-4" key={index}>
+                <Col col={4} key={index}>
                   <Item itemData={item}></Item>
-                </div>
+                </Col>
               )
             })
           }
-        </div>
+        </Row>
       </Container>
     </main>
   );
