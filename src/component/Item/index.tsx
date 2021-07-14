@@ -11,17 +11,17 @@ export interface IItemProps {
 }
 
 const maxRating = 100;
-const maxStart = 5;
+const maxStar = 5;
 
 export default function Item({itemData}: IItemProps) {
   const numberStar = (rating:number) => {
     const numRating = rating > maxRating ? maxRating : rating;
-    const numStar = Math.round((numRating * maxStart) / maxRating);
+    const numStar = Math.round((numRating * maxStar) / maxRating);
     return numStar;
   }
 
-  const numberStarRemain = (rating:number) => {
-    return maxStart - rating > 0 ? maxStart - rating : 0;
+  const numberStarRemain = (star:number) => {
+    return maxStar - star > 0 ? maxStar - star : 0;
   }
 
   const sellPrice = (oldPrice:number, discount:number) => {
@@ -31,51 +31,11 @@ export default function Item({itemData}: IItemProps) {
     }
     return "0"
   }
-
-  const typeItemTag = (item:any) => {
-    let typeTag = '';
-
-    //tag sale
-    if (item.discount > 0) {
-      typeTag = 'sale';
-
-      if (item.discount >= 20) {
-        typeTag = 'hot';
-      }
-    }
-
-    //tag new
-    let aday=1000*60*60*24; //Set 1 day in milliseconds
-    let aWeek = aday * 7;
-    let today= new Date();
-    let newDate = new Date(item.timeImported);
-    let diff = today.getTime() - newDate.getTime();
-
-    if(diff < aWeek){
-      return typeTag = 'new'
-    }
-    
-    //tag hot, best-sell
-    if (item.rate >= 90) {
-      typeTag = 'hot';
-      if (item.timeSold > 1000) {
-        typeTag = 'best sell';
-      }
-    }
-    return typeTag;
-  }
-
-  const checkDiscount = (item:any) => {
-    if (typeItemTag(itemData) === 'hot' && item.discount >= 20) {
-      return item.discount + '%';
-    }
-    return typeItemTag(item)
-  }
   
   return (
     <ItemBox>
       <ItemImageField>
-        <ItemTag typeTag={typeItemTag(itemData)}>{checkDiscount(itemData)}</ItemTag>
+        <ItemTag type='hot'>Hot</ItemTag>
         <ImageFront src={itemData.imageFront || ""} alt=""/>
         <ImageBack src={itemData.imageBack || ""} alt=""/>
       </ItemImageField>

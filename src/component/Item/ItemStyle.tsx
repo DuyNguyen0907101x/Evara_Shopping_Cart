@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ItemTag = styled.span<{
-  typeTag?: string
+  type?: string
 }>`
   position: absolute;
   top: 10px;
@@ -13,8 +13,8 @@ export const ItemTag = styled.span<{
   font-size: 12px;
   z-index: 1;
   text-transform: capitalize;
-  background-color: ${({typeTag}) => {
-    switch(typeTag) {
+  background-color: ${({type}) => {
+    switch(type) {
       case "hot":
         return "#ff75a0"
       case "new":
