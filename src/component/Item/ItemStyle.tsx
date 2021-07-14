@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const ItemTag = styled.span<{
-  tagHot?: boolean,
-  tagNew?: boolean
+  typeTag?: string
 }>`
   position: absolute;
   top: 10px;
@@ -13,12 +12,20 @@ export const ItemTag = styled.span<{
   line-height: 1;
   font-size: 12px;
   z-index: 1;
-  background-color: ${({tagHot, tagNew}) => 
-    tagHot 
-    ? '#ff75a0' 
-    : (tagNew 
-      ? '#99bbad' 
-      : 'unset')}
+  text-transform: capitalize;
+  background-color: ${({typeTag}) => {
+    switch(typeTag) {
+      case "hot":
+        return "#ff75a0"
+      case "new":
+        return "#99bbad"
+      case "best sell":
+        return "#ffab73"
+      case "sale":
+        return "#a1cae2"
+      default:
+        return "unset"
+    }
   }}
 `
 
@@ -43,7 +50,8 @@ export const ItemImageField = styled.div`
   padding-bottom: 100%;
   overflow: hidden;
   margin-bottom: 15px;
-
+  cursor: pointer;
+  
   &:hover ${ImageBack} {
     display: block;
   }
@@ -61,9 +69,13 @@ export const ItemImageField = styled.div`
     object-fit: cover;
   }
 `
+export const ItemContentField = styled.div`
+  padding: 0 10px 0 10px;
+`
 
-export const P = styled.p`
-  margin: 0 0 10px 0;
+export const ItemRate = styled.div`
+  padding-left: 10px;
+  font-size: 14px
 `
 
 export const ItemCurrentPrice = styled.p`
@@ -110,3 +122,23 @@ export const CartIcon = styled.div`
     }
   }
 `
+
+export const Ratings = styled.div`
+  display: flex;
+  margin-bottom: 10px
+`
+
+export const ItemPrice  = styled.div`
+  display: flex;
+  align-items: flex-end;
+`
+
+export const ItemCol = styled.div`
+  width: 50%;
+`;
+
+export const ItemName = styled.h3`
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+`;

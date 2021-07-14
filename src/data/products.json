@@ -4,11 +4,11 @@
      "name":"Colorful Pattern Shirts",
      "imageFront":"http://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/shop/product-1-1.jpg",
      "imageBack":"http://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/shop/product-1-2.jpg",
-     "type":"Clothing",
+     "type":"clothing",
      "rate":90,
-     "sellPrice":238.85,
+     "discount":10,
      "oldPrice":245.8,
-     "timeImported":"1/7/2021",
+     "timeImported":"1/17/2021",
      "timeSold":1
   },
   {
@@ -17,11 +17,11 @@
      "imageFront":"http://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/shop/product-2-1.jpg",
      "imageBack":"http://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/shop/product-2-2.jpg",
      "type":"music",
-     "rate":70,
-     "sellPrice":138.85,
+     "rate":97,
+     "discount":20,
      "oldPrice":255.8,
      "timeImported":"1/6/2021",
-     "timeSold":100
+     "timeSold":1003
   },
   {
      "id":"p3",
@@ -30,10 +30,10 @@
      "imageBack":"http://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/shop/product-3-2.jpg",
      "type":"watch",
      "rate":95,
-     "sellPrice":338.85 ,
+     "discount":0 ,
      "oldPrice":445.8,
-     "timeImported":"1/2/2021",
-     "timeSold":1002
+     "timeImported":"7/13/2021",
+     "timeSold":102
   },
   {
      "id":"p4",
@@ -41,9 +41,10 @@
      "imageFront":"http://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/shop/product-4-1.jpg",
      "imageBack":"http://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/shop/product-4-2.jpg",
      "type":"camera",
-     "rate":90,
-     "sellPrice":123.85,
+     "rate":50,
+     "discount":50,
      "oldPrice":235.8,
-     "timeImported":"1/6/2021"
+     "timeImported":"1/6/2021",
+     "timeSold": 900
   }
 ]

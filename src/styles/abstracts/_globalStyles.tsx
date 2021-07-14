@@ -8,10 +8,6 @@ export const Container = styled.div`
   font-size: 16px;
 `;
 
-export const H2 = styled.h2`
-  margin: 0 0 10px 0;
-`;
-
 export const Row = styled.div`
   display: flex;
   flex: 0 1 auto;
@@ -45,34 +41,17 @@ export const Col = styled.div<{
   }};
 `;
 
-export const Flex = styled.div<{
-  alignItems?: string;
-  justifyContent?: string;
-}>`
+export const Flex = styled.div`
   display: flex;
-  ${({ alignItems }) => alignItems && `align-items: ${alignItems || "flex-start"}`};
-  ${({ justifyContent }) => justifyContent && `justify-content: ${justifyContent || "flex-start"}`};
-`;
-export const Padding = styled.div<{
-  paddingLeft?: string;
-  paddingRight?: string;
-  paddingTop?: string;
-  paddingBottom?: string;
-}>`
-  ${({ paddingLeft }) => paddingLeft && ` padding-left: ${paddingLeft || "0px"}`};
-  ${({ paddingRight }) => paddingRight && `padding-right: ${paddingRight || "0px"}`};
-  ${({ paddingTop }) => paddingTop && `padding-top: ${paddingTop || "0px"}`};
-  ${({ paddingBottom }) => paddingBottom && `padding-bottom: ${paddingBottom || "0px"}`};
 `;
 
-export const Width = styled.div<{
-  w?: string;
-}>`
-  width: ${({ w }) => w || "auto"};
-`;
+export const TitleComponent = styled.div`
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: bold;
+`
 
-export const FontSize = styled.span<{
-  fSize?: string;
-}>`
-  font-size: ${({ fSize }) => fSize || "inherit"};
-`;
+export const Paragraph = styled.p`
+  margin: 0 0 10px 0;
+`

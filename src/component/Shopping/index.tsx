@@ -1,6 +1,7 @@
-import './shopping.css';
+// import './shopping.css';
+import '../Shopping/shopping.scss'
 import * as React from 'react';
-import {Container, H2, Row, Col} from '../../styles/abstracts/_globalStyles';
+import {Container, TitleComponent, Row, Col} from '../../styles/abstracts/_globalStyles';
 
 import Products from '../../data/products.json'
 
@@ -10,7 +11,7 @@ export default function Shopping () {
   return (
     <main className='shopping'>
       <Container>
-        <H2>Shopping</H2>
+        <TitleComponent>SHOPPING</TitleComponent>
         <Row>
           {
             Products && Products.map((item, index) => {
