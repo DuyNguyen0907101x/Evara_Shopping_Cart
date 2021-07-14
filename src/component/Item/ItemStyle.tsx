@@ -73,7 +73,11 @@ export const ItemContentField = styled.div`
   padding: 0 10px 0 10px;
 `
 
-export const ItemRate = styled.div`
+export const RatingsStars = styled.div`
+  display: flex;
+`
+
+export const RatingPercent = styled.div`
   padding-left: 10px;
   font-size: 14px
 `

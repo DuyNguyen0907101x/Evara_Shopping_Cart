@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Flex, Paragraph} from '../../styles/abstracts/_globalStyles';
-import {ItemBox, ItemTag, ItemImageField, ItemContentField, ImageFront, ImageBack, ItemRate, ItemCurrentPrice,
+import {ItemBox, ItemTag, ItemImageField, ItemContentField, ImageFront, ImageBack, RatingsStars, RatingPercent, ItemCurrentPrice,
   ItemOldPrice, CartButton, CartIcon, Ratings, ItemPrice, ItemCol, ItemName} from './ItemStyle';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -45,7 +45,7 @@ export default function Item({itemData}: IItemProps) {
         <Flex>
           <ItemCol>
             <Ratings>
-              <>
+              <RatingsStars>
                 {
                   [...Array(numberStar(itemData.rate))].map((star, index) => <FontAwesomeIcon icon={faStar} color="#FFCC00" key={index}/>)
                 }
@@ -53,8 +53,8 @@ export default function Item({itemData}: IItemProps) {
                   numberStarRemain(numberStar(itemData.rate)) > 0 && 
                   [...Array(numberStarRemain(numberStar(itemData.rate)))].map((star, index) => <FontAwesomeIcon icon={faStar} color="#DDDDDD" key={index}/>)
                 }
-              </>
-              <ItemRate>{itemData.rate || '0'}%</ItemRate>
+              </RatingsStars>
+              <RatingPercent >{itemData.rate || '0'}%</RatingPercent>
             </Ratings>
             <ItemPrice>
               <ItemCurrentPrice>${sellPrice(itemData.oldPrice, itemData.discount)}</ItemCurrentPrice>
