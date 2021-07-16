@@ -1,6 +1,3 @@
-// import './shopping.css';
-import '../Shopping/shopping.scss'
-import * as React from 'react';
 import {Container, TitleComponent, Row, Col} from '../../styles/abstracts/_globalStyles';
 
 import Products from '../../data/products.json'

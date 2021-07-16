@@ -1,37 +1,25 @@
-import * as React from "react";
 import {Flex, Paragraph} from '../../styles/abstracts/_globalStyles';
 import {ItemBox, ItemTag, ItemImageField, ItemContentField, ImageFront, ImageBack, RatingsStars, RatingPercent, ItemCurrentPrice,
   ItemOldPrice, CartButton, CartIcon, Ratings, ItemPrice, ItemCol, ItemName} from './ItemStyle';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { numberStar, numberStarRemain, sellPrice } from '../util';
+import { useMemo } from 'react';
 
 export interface IItemProps {
   itemData?: any;
 }
 
-const maxRating = 100;
-const maxStar = 5;
-
 export default function Item({itemData}: IItemProps) {
-  const numberStar = (rating:number) => {
-    const numRating = rating > maxRating ? maxRating : rating;
-    const numStar = Math.round((numRating * maxStar) / maxRating);
-    return numStar;
-  }
+  const ratingsStars = useMemo(() => {
+    return [...Array(numberStar(itemData.rate))];
+  }, [itemData.rate]);
 
-  const numberStarRemain = (star:number) => {
-    return maxStar - star > 0 ? maxStar - star : 0;
-  }
-
-  const sellPrice = (oldPrice:number, discount:number) => {
-    const num = oldPrice - (oldPrice*discount)/100;
-    if (oldPrice >= 0 && discount >= 0) {
-      return num.toFixed(2);
-    }
-    return "0"
-  }
-  
+  const remainStars = useMemo(() => {
+    return [...Array(numberStarRemain(numberStar(itemData.rate)))];
+  }, [itemData.rate]);
+ 
   return (
     <ItemBox>
       <ItemImageField>
@@ -47,11 +35,11 @@ export default function Item({itemData}: IItemProps) {
             <Ratings>
               <RatingsStars>
                 {
-                  [...Array(numberStar(itemData.rate))].map((star, index) => <FontAwesomeIcon icon={faStar} color="#FFCC00" key={index}/>)
+                  ratingsStars.map((star, index) => <FontAwesomeIcon icon={faStar} color="#FFCC00" key={index}/>)
                 }
                 {
                   numberStarRemain(numberStar(itemData.rate)) > 0 && 
-                  [...Array(numberStarRemain(numberStar(itemData.rate)))].map((star, index) => <FontAwesomeIcon icon={faStar} color="#DDDDDD" key={index}/>)
+                  remainStars.map((star, index) => <FontAwesomeIcon icon={faStar} color="#DDDDDD" key={index}/>)
                 }
               </RatingsStars>
               <RatingPercent >{itemData.rate || '0'}%</RatingPercent>

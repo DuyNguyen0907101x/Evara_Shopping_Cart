@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TypeTag } from "../../constant/enum";
 
 export const ItemTag = styled.span<{
   type?: string
@@ -15,13 +16,13 @@ export const ItemTag = styled.span<{
   text-transform: capitalize;
   background-color: ${({type}) => {
     switch(type) {
-      case "hot":
+      case TypeTag.Hot:
         return "#ff75a0"
-      case "new":
+      case TypeTag.New:
         return "#99bbad"
-      case "best sell":
+      case TypeTag.BestSell:
         return "#ffab73"
-      case "sale":
+      case TypeTag.Sale:
         return "#a1cae2"
       default:
         return "unset"
@@ -70,7 +71,7 @@ export const ItemImageField = styled.div`
   }
 `
 export const ItemContentField = styled.div`
-  padding: 0 10px 0 10px;
+  padding: 0 10px;
 `
 
 export const RatingsStars = styled.div`
@@ -100,7 +101,6 @@ export const ItemOldPrice = styled.p`
 `
 
 export const CartButton = styled.div`
-  width: 100%;
   height: 100%;
   display: flex;
   align-items: flex-end;
