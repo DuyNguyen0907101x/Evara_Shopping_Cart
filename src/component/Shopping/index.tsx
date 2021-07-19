@@ -1,12 +1,26 @@
-import * as React from 'react';
+import {Container, TitleComponent, Row, Col} from '../../styles/abstracts/_globalStyles';
 
-export interface IShoppingProps {
-}
+import Products from '../../data/products.json'
 
-export default function Shopping (props: IShoppingProps) {
+import Item from '../Item';
+
+export default function Shopping () {
   return (
-    <div>
-      Shopping
-    </div>
+    <main className='shopping'>
+      <Container>
+        <TitleComponent>SHOPPING</TitleComponent>
+        <Row>
+          {
+            Products && Products.map((item, index) => {
+              return (
+                <Col col={4} key={index}>
+                  <Item itemData={item}></Item>
+                </Col>
+              )
+            })
+          }
+        </Row>
+      </Container>
+    </main>
   );
 }
