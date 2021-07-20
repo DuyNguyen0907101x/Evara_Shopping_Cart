@@ -4,9 +4,8 @@ import {ItemBox, ItemTag, ItemImageField, ItemContentField, ImageFront, ImageBac
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { numberStar, numberStarRemain, sellPrice } from '../util';
+import { numberStar, numberStarRemain, sellPrice, typeTag, setNameTag } from '../util';
 import { useMemo } from 'react';
-
 export interface IItemProps {
   itemData?: any;
 }
@@ -19,11 +18,11 @@ export default function Item({itemData}: IItemProps) {
   const remainStars = useMemo(() => {
     return [...Array(numberStarRemain(numberStar(itemData.rate)))];
   }, [itemData.rate]);
- 
+
   return (
     <ItemBox>
       <ItemImageField>
-        <ItemTag type='hot'>Hot</ItemTag>
+        <ItemTag type={typeTag(itemData)}>{setNameTag(itemData)}</ItemTag>
         <ImageFront src={itemData.imageFront || ""} alt=""/>
         <ImageBack src={itemData.imageBack || ""} alt=""/>
       </ItemImageField>
