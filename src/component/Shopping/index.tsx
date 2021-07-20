@@ -20,7 +20,7 @@ export default function Shopping () {
           {
             listShopping && listShopping.map((item:any, index:number) => {
               return (
-                <Col col={4} key={index}>
+                <Col col={3} key={index}>
                   <Item itemData={item}></Item>
                 </Col>
               )

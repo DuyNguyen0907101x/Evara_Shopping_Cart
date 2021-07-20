@@ -22,7 +22,11 @@ export default function Item({itemData}: IItemProps) {
   return (
     <ItemBox>
       <ItemImageField>
-        <ItemTag type={typeTag(itemData)}>{setNameTag(itemData)}</ItemTag>
+        {
+          typeTag(itemData) 
+            ? <ItemTag type={typeTag(itemData)}>{setNameTag(itemData)}</ItemTag>
+            : ""
+        }
         <ImageFront src={itemData.imageFront || ""} alt=""/>
         <ImageBack src={itemData.imageBack || ""} alt=""/>
       </ItemImageField>
