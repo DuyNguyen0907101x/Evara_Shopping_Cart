@@ -18,10 +18,10 @@ export default function Shopping () {
         <TitleComponent>SHOPPING</TitleComponent>
         <Row>
           {
-            listShopping && listShopping.map((item:any, index:number) => {
+            listShopping && listShopping.map((item:any) => {
               return (
-                <Col col={4} key={index}>
-                  <Item itemData={item}></Item>
+                <Col col={4} key={item.id}>
+                  <Item itemData={item} />
                 </Col>
               )
             })
