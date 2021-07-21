@@ -1,19 +1,26 @@
+import { useEffect } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import { getShopping } from '../../redux/reducer/shopping/shoppingSlice';
 import {Container, TitleComponent, Row, Col} from '../../styles/abstracts/_globalStyles';
-
-import Products from '../../data/products.json'
-
 import Item from '../Item';
 
 export default function Shopping () {
+  const listShopping = useSelector((state:any) => state?.shopping?.list || []);
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getShopping())
+  }, [dispatch])
+  
   return (
     <main className='shopping'>
       <Container>
         <TitleComponent>SHOPPING</TitleComponent>
         <Row>
           {
-            Products && Products.map((item, index) => {
+            listShopping && listShopping.map((item:any, index:number) => {
               return (
-                <Col col={4} key={index}>
+                <Col col={3} key={index}>
                   <Item itemData={item}></Item>
                 </Col>
               )

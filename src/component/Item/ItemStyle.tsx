@@ -80,7 +80,7 @@ export const RatingsStars = styled.div`
 
 export const RatingPercent = styled.div`
   padding-left: 10px;
-  font-size: 14px
+  font-size: 16px
 `
 
 export const ItemCurrentPrice = styled.p`

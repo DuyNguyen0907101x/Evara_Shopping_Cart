@@ -32,7 +32,7 @@
      "rate":95,
      "discount":0 ,
      "oldPrice":445.8,
-     "timeImported":"7/13/2021",
+     "timeImported":"7/20/2021",
      "timeSold":102
   },
   {
@@ -46,5 +46,29 @@
      "oldPrice":235.8,
      "timeImported":"1/6/2021",
      "timeSold": 900
-  }
+  },
+  {
+   "id":"p5",
+   "name":"Colorful Hawaiian Shirts",
+   "imageFront":"http://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/shop/product-5-1.jpg",
+   "imageBack":"http://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/shop/product-5-2.jpg",
+   "type":"camera",
+   "rate":85,
+   "discount":10,
+   "oldPrice":235.8,
+   "timeImported":"1/6/2021",
+   "timeSold": 900
+   },
+   {
+      "id":"p6",
+      "name":"Colorful Hawaiian Shirts",
+      "imageFront":"http://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/shop/product-6-1.jpg",
+      "imageBack":"http://wp.alithemes.com/html/evara/evara-frontend/assets/imgs/shop/product-6-2.jpg",
+      "type":"camera",
+      "rate":85,
+      "discount":0,
+      "oldPrice":235.8,
+      "timeImported":"1/6/2021",
+      "timeSold": 200
+   }
 ]
