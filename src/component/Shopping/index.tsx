@@ -1,8 +1,8 @@
+import { useEffect } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import { getShopping } from '../../redux/reducer/shopping/shoppingSlice';
 import {Container, TitleComponent, Row, Col} from '../../styles/abstracts/_globalStyles';
 import Item from '../Item';
-import { useEffect } from 'react';
-import { getShopping } from '../../redux/reducer/shopping/shoppingSlice';
 
 export default function Shopping () {
   const listShopping = useSelector((state:any) => state?.shopping?.list || []);

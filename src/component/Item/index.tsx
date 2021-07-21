@@ -1,11 +1,9 @@
-import {Flex, Paragraph} from '../../styles/abstracts/_globalStyles';
-import {ItemBox, ItemTag, ItemImageField, ItemContentField, ImageFront, ImageBack, RatingsStars, RatingPercent, ItemCurrentPrice,
-  ItemOldPrice, CartButton, CartIcon, Ratings, ItemPrice, ItemCol, ItemName} from './ItemStyle';
-
+import { useMemo } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import {Flex, Paragraph} from '../../styles/abstracts/_globalStyles';
+import {ItemBox, ItemTag, ItemImageField, ItemContentField, ImageFront, ImageBack, RatingsStars, RatingPercent, ItemCurrentPrice, ItemOldPrice, CartButton, CartIcon, Ratings, ItemPrice, ItemCol, ItemName} from './ItemStyle';
 import { numberStar, numberStarRemain, sellPrice, typeTag, setNameTag } from '../util';
-import { useMemo } from 'react';
 export interface IItemProps {
   itemData?: any;
 }
