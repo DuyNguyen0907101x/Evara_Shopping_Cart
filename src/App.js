@@ -1,15 +1,15 @@
 import './App.css';
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom';
 
-import Header from '../src/shared/Header';
-import Footer from '../src/shared/Footer';
-import Shopping from '../src/component/Shopping';
+import Header from "./shared/Header";
+import Footer from "./shared/Footer";
+import Shopping from "./component/Shopping";
 
 function App() {
   return (
     <div className="App">
       <Router>
-        <Header></Header>
+        <Header />
         <Switch>
           <Route exact path='/'>
             <Redirect to='/shopping' />
@@ -18,7 +18,7 @@ function App() {
             <Shopping />
           </Route>
         </Switch>
-        <Footer></Footer>
+        <Footer />
       </Router>
     </div>
   );

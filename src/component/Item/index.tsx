@@ -1,24 +1,41 @@
-import {Flex, Paragraph} from '../../styles/abstracts/_globalStyles';
-import {ItemBox, ItemTag, ItemImageField, ItemContentField, ImageFront, ImageBack, RatingsStars, RatingPercent, ItemCurrentPrice,
-  ItemOldPrice, CartButton, CartIcon, Ratings, ItemPrice, ItemCol, ItemName} from './ItemStyle';
-
+/* eslint-disable react/no-array-index-key */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-import { numberStar, numberStarRemain, sellPrice } from '../util';
 import { useMemo } from 'react';
+import { Flex, Paragraph } from '../../styles/abstracts/_globalStyles';
+import {
+  ItemBox,
+  ItemTag,
+  ItemImageField,
+  ItemContentField,
+  ImageFront,
+  ImageBack,
+  RatingsStars,
+  RatingPercent,
+  ItemCurrentPrice,
+  ItemOldPrice,
+  CartButton,
+  CartIcon,
+  Ratings,
+  ItemPrice,
+  ItemCol,
+  ItemName
+} from './ItemStyle';
+
+import { numberStar, numberStarRemain, sellPrice } from '../util';
 
 export interface IItemProps {
   itemData?: any;
 }
 
-export default function Item({itemData}: IItemProps) {
-  const ratingsStars = useMemo(() => {
-    return [...Array(numberStar(itemData.rate))];
-  }, [itemData.rate]);
+export default function Item({ itemData }: IItemProps) {
+  const ratingsStars = useMemo(() => (
+    [...Array(numberStar(itemData.rate))]
+  ), [itemData.rate]);
 
-  const remainStars = useMemo(() => {
-    return [...Array(numberStarRemain(numberStar(itemData.rate)))];
-  }, [itemData.rate]);
+  const remainStars = useMemo(() => (
+    [...Array(numberStarRemain(numberStar(itemData.rate)))]
+  ), [itemData.rate]);
  
   return (
     <ItemBox>
@@ -45,11 +62,12 @@ export default function Item({itemData}: IItemProps) {
               <RatingPercent >{itemData.rate || '0'}%</RatingPercent>
             </Ratings>
             <ItemPrice>
-              <ItemCurrentPrice>${sellPrice(itemData.oldPrice, itemData.discount)}</ItemCurrentPrice>
+              <ItemCurrentPrice>
+                ${sellPrice(itemData.oldPrice, itemData.discount)}
+              </ItemCurrentPrice>
               {
                 itemData.discount ? <ItemOldPrice>${itemData.oldPrice || "0"}</ItemOldPrice> : ""
               }
-              
             </ItemPrice>
           </ItemCol>
           <ItemCol>

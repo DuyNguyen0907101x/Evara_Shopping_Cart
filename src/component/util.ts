@@ -7,9 +7,9 @@ export const numberStar = (rating:number) => {
   return numStar;
 };
 
-export const numberStarRemain = (star:number) => {
-  return maxStar - star > 0 ? maxStar - star : 0;
-};
+export const numberStarRemain = (star:number) => (
+  maxStar - star > 0 ? maxStar - star : 0
+);
 
 export const sellPrice = (oldPrice:number, discount:number) => {
   const num = oldPrice - (oldPrice*discount)/100;
