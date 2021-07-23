@@ -14,7 +14,7 @@ export const ItemTag = styled.span<{
   font-size: 12px;
   z-index: 1;
   text-transform: capitalize;
-  background-color: ${({type}) => {
+  background-color: ${({ type }) => {
     switch(type) {
       case TypeTag.Hot:
         return "#ff75a0"
